@@ -52,7 +52,7 @@ public class JedisConfig extends CachingConfigurerSupport {
         int port = redisConfigProperty.getPort();
         String password = redisConfigProperty.getPassword();
         int database = redisConfigProperty.getDatabase();
-        JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password, database);
+        JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, null, database);
         LOGGER.info("Jedis Pool build success  host = {} , port = {} ", host, port);
         return jedisPool;
     }
